@@ -18,7 +18,6 @@ export function Header() {
   const [activeNav, setActiveNav] = useState("");
 
   const navItems: NavItem[] = [
-    { name: "Home", href: "/" },
     {
       name: "Online Coaching",
       href: "https://coaching.telanganachessacademy.com/",
