@@ -89,15 +89,17 @@ export function HeroSection() {
   ];
 
   const carouselImages = [
-    "/gallery-1.jpg",
-    "/gallery-3.jpg",
-    "/chess-tournament.png",
+    "/slider1.jpg",
+    "/slider3.jpg",
+    "/slider2.jpg",
+    "/slider4.jpg",
   ];
 
   const placeholderImages = [
-    "/gallery-1.jpg",
-    "/gallery-3.jpg",
-    "/chess-tournament.png",
+    "/slider1.jpg",
+    "/slider2.jpg",
+    "/slider3.jpg",
+    "/slider4.jpg",
   ];
 
   // Auto-slide every 4 seconds
@@ -256,6 +258,7 @@ export function HeroSection() {
                   {currentSlide === 0 && "Professional Chess Training"}
                   {currentSlide === 1 && "Dedicated Students Community"}
                   {currentSlide === 2 && "Competitive Tournament Play"}
+                  {currentSlide === 3 && "Join Our Strong Community"}
                 </h3>
                 <p className="text-lg opacity-90">Telangana Chess School</p>
               </div>
