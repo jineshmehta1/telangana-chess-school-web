@@ -18,27 +18,28 @@ export function Header() {
   const [activeNav, setActiveNav] = useState("");
 
   const navItems: NavItem[] = [
+    { name: "Home", href: "/" },
     {
       name: "Online Coaching",
       href: "https://coaching.telanganachessacademy.com/",
       isExternal: true,
     },
-    { 
-      name: "Events", 
+    {
+      name: "Events",
       href: "https://rzp.io/rzp/FbNCr8DK",
-      isExternal: true 
+      isExternal: true,
     },
     { name: "Courses", href: "/courses" },
-    {
-      name: "About",
-      href: "/about",
-      hasDropdown: true,
-      dropdownItems: [
-        { name: "Our Story", href: "/about/#story" },
-        { name: "Our Mission", href: "/about/#mission" },
-        { name: "Achievements", href: "/about/#achievements" },
-      ],
-    },
+    // {
+    //   name: "About",
+    //   href: "/about",
+    //   hasDropdown: true,
+    //   dropdownItems: [
+    //     { name: "Our Story", href: "/about/#story" },
+    //     { name: "Our Mission", href: "/about/#mission" },
+    //     { name: "Achievements", href: "/about/#achievements" },
+    //   ],
+    // },
     { name: "Our Coaches", href: "/coaches" },
     { name: "Gallery", href: "/gallery" },
     { name: "Blogs", href: "/blogs" },
@@ -62,7 +63,7 @@ export function Header() {
             </div>
           </div>
           <div className="text-xs opacity-90">
-            🏆 Premier Chess Training in Telangana
+            🏆 Professional Chess Training in INDIA
           </div>
         </div>
       </div>
@@ -85,7 +86,7 @@ export function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+              <span className="sm:text-xl text-md font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
                 Telangana Chess School
               </span>
               <span className="text-xs text-gray-500 font-medium">

@@ -1,7 +1,19 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Play, Users, Trophy, Star, Sparkles, Award, Video, Bell, ChevronRight, Crown, Zap } from "lucide-react";
+import {
+  Play,
+  Users,
+  Trophy,
+  Star,
+  Sparkles,
+  Award,
+  Video,
+  Bell,
+  ChevronRight,
+  Crown,
+  Zap,
+} from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -11,30 +23,81 @@ export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const meetingLinks = [
-    { href: "https://meet.google.com/vjj-cfpx-dav?pli=1", icon: Video, label: "G-Meet", color: "#2B6CB0", bg: "from-blue-500 to-blue-600" },
-    { href: "https://meet.jit.si/TelanganaChessAcademy", icon: Play, label: "Start Call", color: "#2B6CB0", bg: "from-cyan-500 to-blue-500" },
-    { href: "https://meet.google.com/wuk-nfie-mgx", icon: Play, label: "Call Naresh", color: "#2B6CB0", bg: "from-blue-600 to-indigo-600" },
-    { href: "https://meet.google.com/atu-ziid-ojg", icon: Sparkles, label: "TCS Meeting", color: "#06402B", bg: "from-emerald-600 to-teal-700" },
-    { href: "https://meet.google.com/uux-vyxa-pgq", icon: Bell, label: "BCA Meeting", color: "#06402B", bg: "from-green-600 to-emerald-700" },
-    { href: "https://meet.google.com/mxj-uwyj-vzp", icon: Bell, label: "Call Rohith", color: "#06402B", bg: "from-teal-600 to-green-700" },
+    {
+      href: "https://meet.google.com/vjj-cfpx-dav?pli=1",
+      icon: Video,
+      label: "G-Meet",
+      color: "#2B6CB0",
+      bg: "from-blue-500 to-blue-600",
+    },
+    {
+      href: "https://meet.jit.si/TelanganaChessAcademy",
+      icon: Play,
+      label: "Start Call",
+      color: "#2B6CB0",
+      bg: "from-cyan-500 to-blue-500",
+    },
+    {
+      href: "https://meet.google.com/wuk-nfie-mgx",
+      icon: Play,
+      label: "Call Naresh",
+      color: "#2B6CB0",
+      bg: "from-blue-600 to-indigo-600",
+    },
+    {
+      href: "https://meet.google.com/atu-ziid-ojg",
+      icon: Sparkles,
+      label: "TCS Meeting",
+      color: "#06402B",
+      bg: "from-emerald-600 to-teal-700",
+    },
+    {
+      href: "https://meet.google.com/uux-vyxa-pgq",
+      icon: Bell,
+      label: "BCA Meeting",
+      color: "#06402B",
+      bg: "from-green-600 to-emerald-700",
+    },
+    {
+      href: "https://meet.google.com/mxj-uwyj-vzp",
+      icon: Bell,
+      label: "Call Rohith",
+      color: "#06402B",
+      bg: "from-teal-600 to-green-700",
+    },
   ];
 
   const stats = [
-    { icon: Trophy, value: "120+", label: "Tournaments", gradient: "from-yellow-400 to-orange-500" },
-    { icon: Users, value: "600+", label: "Students", gradient: "from-blue-400 to-purple-500" },
-    { icon: Award, value: "60+", label: "Champions", gradient: "from-purple-400 to-pink-500" },
+    {
+      icon: Trophy,
+      value: "120+",
+      label: "Tournaments",
+      gradient: "from-yellow-400 to-orange-500",
+    },
+    {
+      icon: Users,
+      value: "600+",
+      label: "Students",
+      gradient: "from-blue-400 to-purple-500",
+    },
+    {
+      icon: Award,
+      value: "60+",
+      label: "Champions",
+      gradient: "from-purple-400 to-pink-500",
+    },
   ];
 
   const carouselImages = [
     "/gallery-1.jpg",
     "/gallery-3.jpg",
-    "/chess-tournament.png"
+    "/chess-tournament.png",
   ];
 
   const placeholderImages = [
     "/gallery-1.jpg",
     "/gallery-3.jpg",
-    "/chess-tournament.png"
+    "/chess-tournament.png",
   ];
 
   // Auto-slide every 4 seconds
@@ -46,19 +109,24 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-slate-50 md:pt-28 pt-30">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center overflow-hidden bg-slate-50 md:pt-28 pt-30"
+    >
       {/* Animated mesh gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
                            radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%)`
-        }} />
+                           radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%)`,
+          }}
+        />
       </div>
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
           {/* Left Content */}
           <div className="space-y-6">
             {/* Animated Badge */}
@@ -66,23 +134,14 @@ export function HeroSection() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                 <Crown className="w-4 h-4 text-white" />
               </div>
-              <span className="font-bold text-gray-800">Certified FIDE Coaches</span>
+              <span className="font-bold text-gray-800">
+                Certified FIDE Coaches
+              </span>
               <Sparkles className="w-5 h-5 text-yellow-500" />
             </div>
 
             {/* Dual CTA Buttons - Side by Side */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Link href="https://coaching.telanganachessacademy.com/login" target="_blank">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold px-8 py-5.5 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg group animate-pulse-glow w-full sm:w-auto"
-                >
-                  <Users className="w-2 h-2" />
-                  ONLINE COACHING
-                  <ChevronRight className="w-2 h-2 group-hover:translate-x-2 transition-transform" />
-                </Button>
-              </Link>
-
               <Link href="https://rzp.io/rzp/FbNCr8DK" target="_blank">
                 <Button
                   size="lg"
@@ -94,18 +153,36 @@ export function HeroSection() {
                   <ChevronRight className="w-2 h-2 group-hover:translate-x-2 transition-transform" />
                 </Button>
               </Link>
-            </div>            
+
+              <Link
+                href="https://coaching.telanganachessacademy.com/login"
+                target="_blank"
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold px-8 py-5.5 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg group animate-pulse-glow w-full sm:w-auto"
+                >
+                  <Users className="w-2 h-2" />
+                  ONLINE COACHING
+                  <ChevronRight className="w-2 h-2 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
+            </div>
 
             {/* Meeting Links */}
             <div className="space-y-3">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {meetingLinks.map((link, idx) => (
                   <Link key={idx} href={link.href} target="_blank">
-                    <div className={`relative overflow-hidden bg-gradient-to-br ${link.bg} p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer group`}>
+                    <div
+                      className={`relative overflow-hidden bg-gradient-to-br ${link.bg} p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer group`}
+                    >
                       <div className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors" />
                       <div className="relative flex items-center gap-2 text-white">
                         <link.icon className="w-5 h-5" />
-                        <span className="font-semibold text-sm">{link.label}</span>
+                        <span className="font-semibold text-sm">
+                          {link.label}
+                        </span>
                       </div>
                     </div>
                   </Link>
@@ -122,9 +199,11 @@ export function HeroSection() {
                   Chess Master
                 </span>
               </h1>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                Telangana chess school empowers you with world-class training from FIDE-rated coaches. Build unshakeable skills, dominate the board, and rise to the top of the chess world.
+                Telangana chess school empowers you with world-class training
+                from FIDE-rated coaches. Build unshakeable skills, dominate the
+                board, and rise to the top of the chess world.
               </p>
             </div>
           </div>
@@ -188,20 +267,62 @@ export function HeroSection() {
       {/* Same animations as before */}
       <style jsx>{`
         @keyframes float-slow {
-          0%, 100% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
-          50% { transform: translateY(-20px) rotate(var(--rotate, 0deg)); }
+          0%,
+          100% {
+            transform: translateY(0) rotate(var(--rotate, 0deg));
+          }
+          50% {
+            transform: translateY(-20px) rotate(var(--rotate, 0deg));
+          }
         }
-        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes gradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        @keyframes bounce-s22 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        @keyframes gradient {
+          0%,
+          100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+        @keyframes bounce-s22 {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
         @keyframes pulse-glow {
-          0%, 100% { box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.3); }
-          50% { box-shadow: 0 25px 60px -10px rgba(139, 92, 246, 0.5); }
+          0%,
+          100% {
+            box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.3);
+          }
+          50% {
+            box-shadow: 0 25px 60px -10px rgba(139, 92, 246, 0.5);
+          }
         }
-        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
-        .animate-gradient { background-size: 200% 200%; animation: gradient 3s ease infinite; }
-        .animate-bounce-slow { animation: bounce-s22 3s ease-in-out infinite; }
-        .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .animate-float-slow {
+          animation: float-slow 6s ease-in-out infinite;
+        }
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+        .animate-bounce-slow {
+          animation: bounce-s22 3s ease-in-out infinite;
+        }
+        .animate-pulse-glow {
+          animation: pulse-glow 2s ease-in-out infinite;
+        }
       `}</style>
     </section>
   );
