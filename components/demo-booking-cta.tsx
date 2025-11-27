@@ -67,7 +67,7 @@ export function DemoBookingCTA() {
               className="border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-bold text-lg px-10 py-7 rounded-2xl transition-all duration-300 flex items-center gap-3"
             >
               <Phone className="w-5 h-5" />
-              Call Us: +91-9864646481
+              WHATSAPP Us: +91-9864646481
             </Button>
           </div>
         </div>
