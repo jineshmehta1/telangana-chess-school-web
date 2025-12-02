@@ -144,7 +144,7 @@ export function HeroSection() {
 
             {/* Dual CTA Buttons - Side by Side */}
             <div className="flex flex-col sm:flex-row gap-2">
-              <Link href="https://rzp.io/rzp/FbNCr8DK" target="_blank">
+              <Link href="https://telanganachessacademy.com/tournaments/" target="_blank">
                 <Button
                   size="lg"
                   variant="outline"
