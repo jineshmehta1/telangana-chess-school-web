@@ -99,7 +99,8 @@ export function HeroSection() {
     "/slider1.jpg",
     "/slider2.jpg",
     "/slider3.jpg",
-    "/slider4.jpg",
+    "https://www.bharatchessacademy.com/hero-6.jpg",
+    "https://www.bharatchessacademy.com/hero-6.jpg"
   ];
 
   // Auto-slide every 4 seconds
