@@ -6,7 +6,7 @@ export function AboutSection() {
     {
       icon: Target,
       title: "Professional Training",
-      description: "Learn from FIDE rated instructors and professional chess coaches.",
+      description: "Learn from FIDE rated instructors and professional chess coache.",
     },
     {
       icon: Users,
