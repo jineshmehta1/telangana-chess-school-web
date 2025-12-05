@@ -91,8 +91,8 @@ export function HeroSection() {
   const carouselImages = [
     "/slider1.jpg",
     "/slider3.jpg",
-    "/slider2.jpg",
-    "/slider4.jpg",
+    "/hero-5.jpg",
+    "/hero-6.jpg",
   ];
 
   const placeholderImages = [
