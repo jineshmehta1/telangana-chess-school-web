@@ -26,7 +26,7 @@ export function Header() {
     },
     {
       name: "Events",
-      href: "https://rzp.io/rzp/FbNCr8DK",
+      href: "https://telanganachessacademy.com/tournaments",
       isExternal: true,
     },
     { name: "Courses", href: "/courses" },
