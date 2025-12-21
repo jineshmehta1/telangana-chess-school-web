@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,6 +19,9 @@ import {
   CheckCircle,
   Award,
   Sparkles,
+  ArrowUpRight,
+  ShieldCheck,
+  Layout,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -26,10 +30,7 @@ export default function CoursesPage() {
   const [activeLevel, setActiveLevel] = useState("all");
 
   const toggleFeatures = (index: number) => {
-    setExpandedCourses((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
+    setExpandedCourses((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   const courses = [
@@ -41,55 +42,33 @@ export default function CoursesPage() {
       students: "50+",
       rating: "4.9",
       icon: BookOpen,
-      color: "from-blue-400 to-cyan-400",
-      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
-      borderColor: "border-blue-200",
+      color: "text-blue-600",
+      bg: "bg-blue-50",
+      border: "border-blue-100",
+      accent: "bg-blue-600",
       description: "Perfect for complete beginners starting their chess journey.",
-      features: [
-        "Introduction to Chess",
-        "Chess Board setup and Name of Pieces",
-        "Initial Position of pieces",
-        "Movement of Pieces",
-        "Value of Pieces",
-        "Rules",
-        "Capture and Exchange",
-        "Files, Ranks, Diagonals, Center",
-        "Checkmate and Stalemate",
-        "Special Rules – Castling, Pawn Promotion, and En Passant",
-      ],
-      schedule: "2 classes per week (1.5 hours each)",
+      features: ["Chess Board setup", "Movement of Pieces", "Value of Pieces", "Rules", "Capture and Exchange", "Checkmate and Stalemate", "Castling & Promotion"],
+      schedule: "2 classes / week",
       ageGroup: "6+ years",
-      classSize: "8-10 students",
       popular: true,
     },
     {
-      title: "Beginner Level –2",
-      level: "beginner",
-      duration: "3 Months",
-      price: "₹15,000",
-      students: "45+",
-      rating: "4.8",
-      icon: BookOpen,
-      color: "from-blue-400 to-cyan-400",
-      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50",
-      borderColor: "border-blue-200",
-      description: "Builds on basics with focus on checkmates and simple tactics.",
-      features: [
-        "Elementary Checkmates",
-        "King + Queen Vs King",
-        "King + 2 Rooks Vs King",
-        "King + Rook Vs King",
-        "King + 2 Bishops Vs King",
-        "Check Combination",
-        "Checkmate in 1 move",
-        "Checkmate in 2 move",
-        "Pin (basic)",
-        "Fork (basic)",
-      ],
-      schedule: "2 classes per week (1.5 hours each)",
-      ageGroup: "6+ years",
-      classSize: "8-10 students",
-    },
+        title: "Beginner Level –2",
+        level: "beginner",
+        duration: "3 Months",
+        price: "₹15,000",
+        students: "45+",
+        rating: "4.8",
+        icon: BookOpen,
+        color: "text-sky-600",
+        bg: "bg-sky-50",
+        border: "border-sky-100",
+        accent: "bg-sky-600",
+        description: "Builds on basics with focus on checkmates and simple tactics.",
+        features: ["Elementary Checkmates", "King + Rook Vs King", "King + 2 Bishops Vs King", "Check Combination", "Checkmate in 1-2 moves", "Pin & Fork Basics"],
+        schedule: "2 classes / week",
+        ageGroup: "6+ years",
+      },
     {
       title: "Intermediate Level –1",
       level: "intermediate",
@@ -98,108 +77,33 @@ export default function CoursesPage() {
       students: "40+",
       rating: "4.8",
       icon: Target,
-      color: "from-emerald-400 to-green-400",
-      bgColor: "bg-gradient-to-br from-emerald-50 to-green-50",
-      borderColor: "border-emerald-200",
+      color: "text-emerald-600",
+      bg: "bg-emerald-50",
+      border: "border-emerald-100",
+      accent: "bg-emerald-600",
       description: "Introduces intermediate players to advanced tactics.",
-      features: [
-        "Pin",
-        "Absolute Pin",
-        "Relative Pin",
-        "Fork",
-        "Checkmate in 3 moves",
-        "Checkmate in 4 moves",
-        "Double Attack",
-        "Discovered Check",
-      ],
-      schedule: "3 classes per week (2 hours each)",
+      features: ["Absolute & Relative Pin", "Fork Motifs", "Checkmate in 3-4 moves", "Double Attack", "Discovered Check"],
+      schedule: "3 classes / week",
       ageGroup: "8+ years",
-      classSize: "6-8 students",
       popular: true,
     },
     {
-      title: "Intermediate Level –2",
-      level: "intermediate",
-      duration: "4 Months",
-      price: "₹20,000",
-      students: "40+",
-      rating: "4.8",
-      icon: Target,
-      color: "from-emerald-400 to-green-400",
-      bgColor: "bg-gradient-to-br from-emerald-50 to-green-50",
-      borderColor: "border-emerald-200",
-      description: "Focuses on opening basics and tactical patterns.",
-      features: [
-        "Opening Basics",
-        "Center control",
-        "Development of pieces",
-        "Placing piece on good squares",
-        "Coordination of pieces",
-        "Opening – Giuoco Piano (King Pawn Opening)",
-        "Checkmate in 3 moves",
-        "Checkmate in 4 moves",
-        "Double Attack",
-        "Discovered Check",
-      ],
-      schedule: "3 classes per week (2 hours each)",
-      ageGroup: "8+ years",
-      classSize: "6-8 students",
-    },
-    {
-      title: "Intermediate Level –3",
-      level: "intermediate",
-      duration: "4 Months",
-      price: "₹20,000",
-      students: "35+",
-      rating: "4.8",
-      icon: Target,
-      color: "from-emerald-400 to-green-400",
-      bgColor: "bg-gradient-to-br from-emerald-50 to-green-50",
-      borderColor: "border-emerald-200",
-      description: "Deepens tactical understanding with complex motifs.",
-      features: [
-        "Discovered Attack",
-        "Decoy",
-        "X – ray",
-        "Attraction",
-        "Interference",
-        "Over worked piece",
-      ],
-      schedule: "3 classes per week (2 hours each)",
-      ageGroup: "8+ years",
-      classSize: "6-8 students",
-    },
-    {
-      title: "Intermediate Level –4",
-      level: "intermediate",
-      duration: "4 Months",
-      price: "₹20,000",
-      students: "35+",
-      rating: "4.8",
-      icon: Target,
-      color: "from-emerald-400 to-green-400",
-      bgColor: "bg-gradient-to-br from-emerald-50 to-green-50",
-      borderColor: "border-emerald-200",
-      description: "Covers opening preparation and pawn structures.",
-      features: [
-        "Opening",
-        "Preparing an Opening repertoire according to need of Intermediate level",
-        "Open files and Diagonals",
-        "Pawn Structure",
-        "Double Pawns",
-        "Isolated Pawn",
-        "Connected Pawns",
-        "Backward Pawn",
-        "Passed Pawn",
-        "Double Check",
-        "Trapped Man",
-        "Zugzwang",
-        "Clearance",
-      ],
-      schedule: "3 classes per week (2 hours each)",
-      ageGroup: "8+ years",
-      classSize: "6-8 students",
-    },
+        title: "Intermediate Level –4",
+        level: "intermediate",
+        duration: "4 Months",
+        price: "₹20,000",
+        students: "35+",
+        rating: "4.8",
+        icon: Target,
+        color: "text-teal-600",
+        bg: "bg-teal-50",
+        border: "border-teal-100",
+        accent: "bg-teal-600",
+        description: "Covers opening preparation and pawn structures.",
+        features: ["Opening Repertoire", "Open files and Diagonals", "Pawn Structure Mastery", "Passed Pawns", "Zugzwang & Clearance"],
+        schedule: "3 classes / week",
+        ageGroup: "8+ years",
+      },
     {
       title: "Advanced Level –1",
       level: "advanced",
@@ -208,41 +112,14 @@ export default function CoursesPage() {
       students: "25+",
       rating: "4.9",
       icon: Trophy,
-      color: "from-purple-400 to-pink-400",
-      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
-      borderColor: "border-purple-200",
+      color: "text-purple-600",
+      bg: "bg-purple-50",
+      border: "border-purple-100",
+      accent: "bg-purple-600",
       description: "Intensive training for competitive players.",
-      features: [
-        "Types of Centre",
-        "Open Centre",
-        "Closed Centre",
-        "Static Centre",
-        "Dynamic Centre",
-        "Pawn Centre",
-        "Pawn Endgames",
-        "Opening Repertoire for Advanced Level player",
-        "Space Advantage",
-        "In depth analysis of Opening lines",
-        "Pawn chain",
-        "Pawn wedge",
-        "Prophylaxis",
-        "Exploiting an Advantage",
-        "Knight Endgames",
-        "Outpost",
-        "Including Pieces into Attack",
-        "Greek gift",
-        "Focal Point g7",
-        "Sacrifice on f7",
-        "Sacrifice on h6",
-        "Rook Lifting",
-        "Bishop Vs Knight",
-        "Initiative",
-        "Manoeuvring",
-        "Positional Sacrifices",
-      ],
-      schedule: "4 classes per week (2.5 hours each)",
+      features: ["Types of Centre Control", "In-depth Opening Analysis", "Prophylaxis", "Positional Sacrifices", "Greek Gift Sacrifice"],
+      schedule: "4 classes / week",
       ageGroup: "12+ years",
-      classSize: "4-6 students",
       popular: true,
     },
     {
@@ -253,293 +130,226 @@ export default function CoursesPage() {
       students: "20+",
       rating: "4.9",
       icon: Crown,
-      color: "from-amber-400 to-orange-400",
-      bgColor: "bg-gradient-to-br from-amber-50 to-orange-50",
-      borderColor: "border-amber-200",
+      color: "text-amber-600",
+      bg: "bg-amber-50",
+      border: "border-amber-100",
+      accent: "bg-amber-600",
       description: "Elite training for aspiring masters with focus on discipline.",
-      features: [
-        "Conditions",
-        "Completing Chess homework on time",
-        "Participation in tournaments as recommended",
-        "Regular attendance",
-        "Regular practice at home",
-      ],
-      schedule: "4 classes per week (2.5 hours each)",
+      features: ["Elite Tournament Prep", "Master Homework Discipline", "Advanced Practice Metrics", "Psychological Prep"],
+      schedule: "4 classes / week",
       ageGroup: "12+ years",
-      classSize: "4-6 students",
     }
   ];
 
-  const filteredCourses = activeLevel === "all" 
-    ? courses 
-    : courses.filter(course => course.level === activeLevel);
-
   const levelFilters = [
-    { id: "all", label: "All Courses", color: "from-gray-600 to-gray-800" },
-    { id: "beginner", label: "Beginner", color: "from-blue-500 to-cyan-500" },
-    { id: "intermediate", label: "Intermediate", color: "from-emerald-500 to-green-500" },
-    { id: "advanced", label: "Advanced", color: "from-purple-500 to-pink-500" },
-    { id: "expert", label: "Expert", color: "from-amber-500 to-orange-500" },
+    { id: "all", label: "All Curriculums" },
+    { id: "beginner", label: "Beginner" },
+    { id: "intermediate", label: "Intermediate" },
+    { id: "advanced", label: "Advanced" },
+    { id: "expert", label: "Expert" },
   ];
 
+  const filteredCourses = activeLevel === "all" ? courses : courses.filter(c => c.level === activeLevel);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 py-10">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-500"></div>
-      </div>
+    <div className="min-h-screen bg-white text-slate-900 pb-20 pt-32 relative overflow-hidden">
+      {/* Editorial Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: `radial-gradient(#000 1.5px, transparent 1.5px)`, backgroundSize: '30px 30px' }} />
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <Badge className="mb-6 bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 px-6 py-2 text-lg shadow-lg">
-            <Sparkles className="w-4 h-4 mr-2" />
-            Master Chess with Expert Guidance
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-            Chess Courses
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            Strategic learning paths designed to transform beginners into masters through proven methodologies
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link href="/contact">
-              <Button className="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-8 py-3 text-lg rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <Play className="w-5 h-5 mr-2" />
-                Start Learning Today
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Level Filter */}
-      <section className="relative py-12 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {levelFilters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveLevel(filter.id)}
-                className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                  activeLevel === filter.id
-                    ? `bg-gradient-to-r ${filter.color} text-white shadow-lg`
-                    : "bg-white/80 backdrop-blur-sm border border-gray-200 text-gray-700 hover:bg-white"
-                }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Courses Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredCourses.map((course, index) => (
-              <div
-                key={index}
-                className={`relative ${course.bgColor} border-2 ${course.borderColor} rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden group`}
-              >
-                {/* Popular Badge */}
-                {course.popular && (
-                  <div className="absolute top-6 right-6 z-10">
-                    <Badge className="bg-gradient-to-r from-amber-400 to-orange-400 text-white px-4 py-1 rounded-full shadow-lg">
-                      <Star className="w-3 h-3 mr-1 fill-current" />
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-
-                {/* Course Header */}
-                <div className={`h-3 bg-gradient-to-r ${course.color}`}></div>
-                
-                <CardContent className="p-8">
-                  {/* Course Icon and Title */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${course.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <course.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-800">{course.title}</h3>
-                        <div className="flex items-center gap-2 mt-2">
-                          <Badge variant="outline" className={`border-current text-xs px-3 py-1 rounded-full bg-white/50 backdrop-blur-sm`}>
-                            {course.level.charAt(0).toUpperCase() + course.level.slice(1)}
-                          </Badge>
-                          <div className="flex items-center gap-1 text-sm text-gray-600">
-                            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                            {course.rating}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Price and Duration */}
-                  <div className="flex items-center justify-between mb-6 p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-gray-200">
-                    <div>
-                      <div className="text-3xl font-bold text-gray-800">{course.price}</div>
-                      <div className="text-sm text-gray-600">{course.duration} program</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Users className="w-4 h-4" />
-                        {course.students} students
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 mb-6 leading-relaxed">{course.description}</p>
-
-                  {/* Course Details */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-gray-800 flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        Course Schedule
-                      </h4>
-                      <div className="text-sm text-gray-600 space-y-1">
-                        <div>{course.schedule}</div>
-                        <div>Age: {course.ageGroup}</div>
-                        <div>Class size: {course.classSize}</div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-3">
-                      <h4 className="font-semibold text-gray-800 flex items-center gap-2">
-                        <Award className="w-4 h-4" />
-                        Key Topics
-                      </h4>
-                      <div className="space-y-2">
-                        {course.features.slice(0, 3).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            <span className="text-sm text-gray-600">{feature}</span>
-                          </div>
-                        ))}
-                        {course.features.length > 3 && (
-                          <>
-                            {expandedCourses[index] ? (
-                              <>
-                                {course.features.slice(3).map((feature, featureIndex) => (
-                                  <div key={featureIndex + 3} className="flex items-center gap-2">
-                                    <CheckCircle className="w-4 h-4 text-green-500" />
-                                    <span className="text-sm text-gray-600">{feature}</span>
-                                  </div>
-                                ))}
-                                <button
-                                  className="flex items-center gap-2 text-sm text-blue-600 font-medium hover:underline mt-2"
-                                  onClick={() => toggleFeatures(index)}
-                                >
-                                  <ChevronUp className="w-4 h-4" />
-                                  Show less
-                                </button>
-                              </>
-                            ) : (
-                              <button
-                                className="flex items-center gap-2 text-sm text-blue-600 font-medium hover:underline mt-2"
-                                onClick={() => toggleFeatures(index)}
-                              >
-                                <ChevronDown className="w-4 h-4" />
-                                +{course.features.length - 3} more topics
-                              </button>
-                            )}
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* CTA Buttons */}
-                  <div className="flex gap-3">
-                    <Link href="/contact" className="flex-1">
-                      <Button className={`w-full bg-gradient-to-r ${course.color} hover:opacity-90 text-white py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300`}>
-                        Enroll Now
-                      </Button>
-                    </Link>
-                    <Button variant="outline" className="flex-1 border-2 border-gray-300 text-gray-700 hover:bg-white/50 py-3 rounded-2xl backdrop-blur-sm">
-                     Learn more
-                    </Button>
-                  </div>
-                </CardContent>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="relative py-20 px-4 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-              Why Learn With Us?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Our proven approach combines expert instruction with personalized attention
+      <div className="container max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Header - Editorial Style */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+              <ShieldCheck className="w-3 h-3 text-blue-600" /> Syllabus 2024-25
+            </div>
+            <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none mb-6 uppercase">
+              STRATEGIC <br />
+              <span className="text-blue-600 italic">CURRICULUM.</span>
+            </h1>
+            <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl border-l-2 border-slate-200 pl-6">
+              Learning paths designed by FIDE masters to transform students from casual players into ranked competitive masters.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Users,
-                title: "Small Batch Sizes",
-                description: "Maximum 10 students per batch ensuring individual attention and personalized feedback.",
-                color: "from-blue-400 to-cyan-400"
-              },
-              {
-                icon: Trophy,
-                title: "Proven Track Record",
-                description: "500+ students transformed from beginners to competitive tournament players.",
-                color: "from-emerald-400 to-green-400"
-              },
-              {
-                icon: Zap,
-                title: "Progressive Curriculum",
-                description: "Systematic learning path designed by FIDE rated coaches and chess masters.",
-                color: "from-purple-400 to-pink-400"
-              }
-            ].map((feature, index) => (
-              <div key={index} className="text-center p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 transform hover:-translate-y-2">
-                <div className={`w-20 h-20 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
-                  <feature.icon className="w-10 h-10 text-white" />
+        </div>
+
+        {/* Filter Command Bar */}
+        <div className="flex flex-wrap items-center gap-2 mb-16 bg-slate-50 p-2 rounded-[2rem] border border-slate-100 w-fit mx-auto lg:mx-0">
+          {levelFilters.map((filter) => (
+            <button
+              key={filter.id}
+              onClick={() => setActiveLevel(filter.id)}
+              className={`px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${
+                activeLevel === filter.id
+                  ? "bg-slate-900 text-white shadow-xl"
+                  : "text-slate-400 hover:text-slate-900"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {filteredCourses.map((course, index) => {
+            const Icon = course.icon;
+            return (
+              <Card
+                key={index}
+                className={`group relative overflow-hidden bg-white border-2 ${course.border} rounded-[3rem] shadow-2xl shadow-slate-200/50 transition-all duration-500 hover:-translate-y-2`}
+              >
+                {/* Visual Accent */}
+                <div className={`absolute top-0 right-0 p-12 opacity-[0.03] ${course.color}`}>
+                  <Icon className="w-48 h-48 rotate-12" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+
+                <div className="p-8 md:p-12 relative z-10">
+                  <div className="flex items-center justify-between mb-10">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-16 h-16 rounded-[1.5rem] ${course.bg} ${course.color} flex items-center justify-center shadow-sm transition-transform group-hover:rotate-12`}>
+                        <Icon className="w-8 h-8" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none uppercase">{course.title}</h3>
+                        <p className={`text-[10px] font-black uppercase tracking-widest mt-2 ${course.color}`}>{course.level} training phase</p>
+                      </div>
+                    </div>
+                    {course.popular && (
+                      <Badge className="bg-amber-400 text-white px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest border-none shadow-lg">
+                        <Sparkles className="w-3 h-3 mr-1" /> Essential
+                      </Badge>
+                    )}
+                  </div>
+
+                  <p className="text-slate-500 font-medium italic mb-10 leading-relaxed text-lg border-l-2 border-slate-100 pl-6">
+                    {course.description}
+                  </p>
+
+                  {/* Syllabus Stats Hub */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Tuition</p>
+                      <p className="text-xl font-black text-slate-900 tracking-tighter">{course.price}</p>
+                    </div>
+                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Duration</p>
+                      <p className="text-xl font-black text-slate-900 tracking-tighter">{course.duration}</p>
+                    </div>
+                    <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 hidden sm:block">
+                      <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Community</p>
+                      <p className="text-xl font-black text-slate-900 tracking-tighter">{course.students}</p>
+                    </div>
+                  </div>
+
+                  {/* Curriculum Details */}
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                        <span>Modules Covered</span>
+                        <div className="flex items-center gap-4">
+                            <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {course.ageGroup}</span>
+                            <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> {course.schedule}</span>
+                        </div>
+                    </div>
+                    
+                    <div className="grid sm:grid-cols-1 gap-3">
+                      {course.features.slice(0, expandedCourses[index] ? undefined : 4).map((feat, i) => (
+                        <div key={i} className="flex items-center gap-3 animate-in fade-in slide-in-from-left-2 duration-300">
+                          <CheckCircle className={`w-4 h-4 ${course.color} opacity-40`} />
+                          <span className="text-xs font-bold text-slate-700 uppercase tracking-tight">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <button 
+                      onClick={() => toggleFeatures(index)}
+                      className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-blue-600 hover:gap-3 transition-all mt-4"
+                    >
+                      {expandedCourses[index] ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      {expandedCourses[index] ? "Collapse Syllabus" : `View Full ${course.features.length} Modules`}
+                    </button>
+                  </div>
+
+                  {/* Footer CTA */}
+                  <div className="mt-12 pt-10 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
+                    <Link href="/contact" className="flex-1">
+                      <Button className={`w-full h-14 rounded-2xl ${course.accent} text-white font-black uppercase tracking-widest text-xs gap-2 group/btn`}>
+                        Enroll Now <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-all" />
+                      </Button>
+                    </Link>
+                    <Link href="/contact" className="flex-1">
+                      <Button variant="outline" className="w-full h-14 rounded-2xl border-2 border-slate-100 font-black uppercase tracking-widest text-xs text-slate-500 hover:text-slate-900">
+                        Request Trial
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Advantage Grid */}
+      <section className="mt-32 py-24 bg-slate-50 relative overflow-hidden border-y border-slate-100">
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase mb-6">
+              THE ACADEMY <span className="text-blue-600 italic">EDGE.</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { icon: Users, title: "Elite Batches", detail: "Maximum 10 students ensuring one-to-one master feedback.", color: "text-blue-600", bg: "bg-blue-600/10" },
+              { icon: Trophy, title: "Proven Victory", detail: "500+ students transformed from enthusiasts to ranked players.", color: "text-emerald-600", bg: "bg-emerald-600/10" },
+              { icon: Zap, title: "Pro Curriculum", detail: "Tactical learning designed by FIDE coaches and chess masters.", color: "text-purple-600", bg: "bg-purple-600/10" }
+            ].map((feature, index) => (
+              <div key={index} className="text-center group">
+                <div className={`w-20 h-20 ${feature.bg} ${feature.color} rounded-[2rem] flex items-center justify-center mx-auto mb-8 transition-transform group-hover:rotate-12`}>
+                  <feature.icon className="w-10 h-10" />
+                </div>
+                <h3 className="text-xl font-black text-slate-900 mb-4 tracking-tight uppercase">{feature.title}</h3>
+                <p className="text-slate-500 font-medium leading-relaxed px-4">{feature.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative py-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl p-12 shadow-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Master Chess?
+      {/* Final Action Hub */}
+      <section className="py-32 container max-w-7xl mx-auto px-6 text-center">
+        <div className="bg-slate-900 text-white rounded-[3.5rem] p-12 md:p-24 relative overflow-hidden shadow-2xl">
+          <Sparkles className="absolute top-0 right-0 w-64 h-64 text-white/5 -translate-y-20 translate-x-20 rotate-12" />
+          <div className="relative z-10">
+            <h2 className="text-4xl md:text-7xl font-black tracking-tighter uppercase mb-8 leading-none">
+              READY TO <span className="text-blue-400 italic">ASCEND?</span>
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join our community of chess enthusiasts and start your journey towards mastery today
+            <p className="text-slate-400 text-xl font-medium mb-12 max-w-2xl mx-auto italic leading-relaxed">
+              Unlock your grandmaster potential with our world-class syllabus. Start with a free trial class today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  Book Free Trial Class
+                <Button className="h-16 px-12 bg-white text-slate-900 hover:bg-blue-500 hover:text-white rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl">
+                  Book Free Trial Session
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4 text-lg rounded-2xl font-semibold backdrop-blur-sm">
-                  Speak with Coach
+                <Button variant="outline" className="h-16 px-12 border-2 border-white/20 text-white hover:bg-white/10 rounded-2xl font-black uppercase tracking-widest text-xs">
+                  Speak with a Coach
                 </Button>
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Background ghost text */}
+      <div className="absolute bottom-0 left-0 pointer-events-none select-none opacity-[0.03] translate-y-1/2">
+        <h2 className="text-[20vw] font-black text-slate-900 leading-none">SYLLABUS</h2>
+      </div>
     </div>
   );
 }

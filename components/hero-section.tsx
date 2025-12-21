@@ -19,7 +19,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export function HeroSection() {
-  const [activeTab, setActiveTab] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const meetingLinks = [
@@ -27,64 +26,43 @@ export function HeroSection() {
       href: "https://meet.google.com/vjj-cfpx-dav?pli=1",
       icon: Video,
       label: "G-Meet",
-      color: "#2B6CB0",
-      bg: "from-blue-500 to-blue-600",
+      bg: "from-indigo-500 to-blue-700",
+      shadow: "shadow-indigo-200",
     },
     {
       href: "https://meet.jit.si/TelanganaChessAcademy",
       icon: Play,
       label: "Start Call",
-      color: "#2B6CB0",
-      bg: "from-cyan-500 to-blue-500",
+      bg: "from-rose-500 to-orange-500",
+      shadow: "shadow-rose-200",
     },
     {
       href: "https://meet.google.com/wuk-nfie-mgx",
       icon: Play,
       label: "Call Naresh",
-      color: "#2B6CB0",
-      bg: "from-blue-600 to-indigo-600",
+      bg: "from-amber-400 to-yellow-600",
+      shadow: "shadow-amber-100",
     },
     {
       href: "https://meet.google.com/atu-ziid-ojg",
       icon: Sparkles,
       label: "TCS Meeting",
-      color: "#06402B",
-      bg: "from-emerald-600 to-teal-700",
+      bg: "from-emerald-500 to-teal-700",
+      shadow: "shadow-emerald-200",
     },
     {
       href: "https://meet.google.com/uux-vyxa-pgq",
       icon: Bell,
       label: "BCA Meeting",
-      color: "#06402B",
-      bg: "from-green-600 to-emerald-700",
+      bg: "from-violet-600 to-purple-800",
+      shadow: "shadow-violet-200",
     },
     {
       href: "https://meet.google.com/mxj-uwyj-vzp",
       icon: Bell,
       label: "Call Rohith",
-      color: "#06402B",
-      bg: "from-teal-600 to-green-700",
-    },
-  ];
-
-  const stats = [
-    {
-      icon: Trophy,
-      value: "120+",
-      label: "Tournaments",
-      gradient: "from-yellow-400 to-orange-500",
-    },
-    {
-      icon: Users,
-      value: "600+",
-      label: "Students",
-      gradient: "from-blue-400 to-purple-500",
-    },
-    {
-      icon: Award,
-      value: "60+",
-      label: "Champions",
-      gradient: "from-purple-400 to-pink-500",
+      bg: "from-sky-400 to-blue-600",
+      shadow: "shadow-sky-100",
     },
   ];
 
@@ -103,7 +81,6 @@ export function HeroSection() {
     "https://www.bharatchessacademy.com/hero-6.jpg"
   ];
 
-  // Auto-slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
@@ -114,220 +91,128 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden bg-slate-50 md:pt-28 pt-30"
+      className="relative min-h-screen flex items-center overflow-hidden bg-white md:pt-25 pt-30"
     >
-      {/* Animated mesh gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
-                           radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%)`,
-          }}
-        />
-      </div>
+      {/* Modern Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-40" 
+           style={{ backgroundImage: `radial-gradient(#e2e8f0 1.5px, transparent 1.5px)`, backgroundSize: '24px 24px' }} />
+      
+      {/* Decorative Accents */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
           {/* Left Content */}
-          <div className="space-y-6">
-            {/* Animated Badge */}
-            <div className="inline-flex items-center gap-3 bg-white px-3 py-2 rounded-full shadow-lg border-2 border-purple-100 animate-bounce-slow">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <Crown className="w-4 h-4 text-white" />
-              </div>
-              <span className="font-bold text-gray-800">
-                Certified FIDE Coaches
-              </span>
-              <Sparkles className="w-5 h-5 text-yellow-500" />
-            </div>
+          <div className="space-y-10">
+            {/* Minimal Badge */}
+            
 
-            {/* Dual CTA Buttons - Side by Side */}
-            <div className="flex flex-col sm:flex-row gap-2">
+            {/* Dual CTA Buttons - Different Colors */}
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link href="https://telanganachessacademy.com/tournaments/" target="_blank">
                 <Button
                   size="lg"
-                  variant="outline"
-                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold px-8 py-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-lg group backdrop-blur-md bg-white/80 w-full sm:w-auto"
+                  className="bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-black px-10 py-7 rounded-none shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-200 text-lg group w-full sm:w-auto uppercase tracking-tighter"
                 >
-                  <Trophy className="w-2 h-2" />
-                  EVENTS & TOURNAMENTS
-                  <ChevronRight className="w-2 h-2 group-hover:translate-x-2 transition-transform" />
+                  <Trophy className="mr-2 h-5 w-5" />
+                  Events
+                  <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
 
-              <Link
-                href="https://coaching.telanganachessacademy.com/login"
-                target="_blank"
-              >
+              <Link href="https://coaching.telanganachessacademy.com/login" target="_blank">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-700 hover:via-purple-700 hover:to-pink-700 text-white font-bold px-8 py-5.5 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 text-lg group animate-pulse-glow w-full sm:w-auto"
+                  className="bg-[#0066FF] hover:bg-[#0052cc] text-white font-black px-10 py-7 rounded-none shadow-[8px_8px_0px_0px_rgba(0,102,255,0.3)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-200 text-lg group w-full sm:w-auto uppercase tracking-tighter"
                 >
-                  <Users className="w-2 h-2" />
-                  ONLINE COACHING
-                  <ChevronRight className="w-2 h-2 group-hover:translate-x-2 transition-transform" />
+                  <Users className="mr-2 h-5 w-5" />
+                  Coaching
+                  <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
 
-            {/* Meeting Links */}
-            <div className="space-y-3">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {meetingLinks.map((link, idx) => (
-                  <Link key={idx} href={link.href} target="_blank">
-                    <div
-                      className={`relative overflow-hidden bg-gradient-to-br ${link.bg} p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 cursor-pointer group`}
-                    >
-                      <div className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors" />
-                      <div className="relative flex items-center gap-2 text-white">
+            {/* Meeting Links - Unique Colors Per Button */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {meetingLinks.map((link, idx) => (
+                <Link key={idx} href={link.href} target="_blank">
+                  <div
+                    className={`relative overflow-hidden bg-gradient-to-br ${link.bg} p-5 rounded-2xl shadow-lg ${link.shadow} hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer group border border-white/20`}
+                  >
+                    <div className="relative flex flex-col gap-2 text-white">
+                      <div className="bg-white/20 w-fit p-2 rounded-lg">
                         <link.icon className="w-5 h-5" />
-                        <span className="font-semibold text-sm">
-                          {link.label}
-                        </span>
                       </div>
+                      <span className="font-black text-xs uppercase tracking-widest">
+                        {link.label}
+                      </span>
                     </div>
-                  </Link>
-                ))}
-              </div>
+                  </div>
+                </Link>
+              ))}
             </div>
 
-            {/* Heading */}
-            <div className="space-y-6">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight">
-                <span className="text-gray-900">Become a</span>
-                <br />
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+            {/* Heading & Text */}
+            <div className="space-y-8 pt-4">
+              <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black leading-[0.9] text-slate-900 tracking-tighter">
+                BECOME A <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 uppercase italic">
                   Chess Master
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                Telangana chess school empowers you with world-class training
-                from FIDE-rated coaches. Build unshakeable skills, dominate the
-                board, and rise to the top of the chess world.
-              </p>
             </div>
           </div>
 
-          {/* Right Side - Improved Image Carousel */}
-          <div className="relative h-80 sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden ml-2">
-            <div className="relative w-full h-full">
-              {carouselImages.map((src, idx) => (
-                <div
-                  key={idx}
-                  className={`absolute inset-0 transition-opacity duration-1000 ${
-                    currentSlide === idx ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <Image
-                    src={src}
-                    alt={`Chess academy highlight ${idx + 1}`}
-                    fill
-                    className="object-cover"
-                    priority={idx === 0}
-                    onError={(e) => {
-                      // Fallback to placeholder if image fails to load
-                      const target = e.target as HTMLImageElement;
-                      target.src = placeholderImages[idx];
-                    }}
-                  />
-                  {/* Dark overlay for better text visibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                </div>
-              ))}
-
-              {/* Slide Indicators */}
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2 z-20">
-                {carouselImages.map((_, idx) => (
-                  <button
+          {/* Right Side - Carousel with "Floating Frame" */}
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-tr from-slate-100 to-blue-50 rounded-[3rem] -z-10 transform rotate-2 group-hover:rotate-0 transition-transform duration-500" />
+            <div className="relative h-80 sm:h-[450px] lg:h-[550px] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl">
+              <div className="relative w-full h-full bg-slate-200">
+                {carouselImages.map((src, idx) => (
+                  <div
                     key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      currentSlide === idx
-                        ? "bg-white w-8"
-                        : "bg-white/50 hover:bg-white/80"
+                    className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+                      currentSlide === idx ? "opacity-100 scale-100" : "opacity-0 scale-105"
                     }`}
-                  />
+                  >
+                    <Image
+                      src={src}
+                      alt={`Academy ${idx + 1}`}
+                      fill
+                      className="object-cover"
+                      priority={idx === 0}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = placeholderImages[idx];
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  </div>
                 ))}
-              </div>
 
-              {/* Caption */}
-              <div className="absolute bottom-16 left-6 right-6 text-white z-10">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-2">
-                  {currentSlide === 0 && "Professional Chess Training"}
-                  {currentSlide === 1 && "Dedicated Students Community"}
-                  {currentSlide === 2 && "Competitive Tournament Play"}
-                  {currentSlide === 3 && "Join Our Strong Community"}
-                </h3>
-                <p className="text-lg opacity-90">Telangana Chess School</p>
+                {/* Bottom Overlay Content */}
+                <div className="absolute bottom-10 left-10 right-10 text-white space-y-2">
+                   <div className="flex gap-1.5 mb-4">
+                      {carouselImages.map((_, idx) => (
+                        <div key={idx} className={`h-1 rounded-full transition-all duration-500 ${currentSlide === idx ? "w-10 bg-white" : "w-2 bg-white/40"}`} />
+                      ))}
+                   </div>
+                   <p className="text-xs font-black uppercase tracking-[0.3em] text-blue-400">Academy Spotlight</p>
+                   <h3 className="text-2xl sm:text-3xl font-bold">
+                    {currentSlide === 0 && "Grandmaster Mentorship"}
+                    {currentSlide === 1 && "Global Community"}
+                    {currentSlide === 2 && "Elite Tournaments"}
+                    {currentSlide === 3 && "Join the Legacy"}
+                   </h3>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Same animations as before */}
-      <style jsx>{`
-        @keyframes float-slow {
-          0%,
-          100% {
-            transform: translateY(0) rotate(var(--rotate, 0deg));
-          }
-          50% {
-            transform: translateY(-20px) rotate(var(--rotate, 0deg));
-          }
-        }
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes gradient {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        @keyframes bounce-s22 {
-          0%,
-          100% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-        }
-        @keyframes pulse-glow {
-          0%,
-          100% {
-            box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.3);
-          }
-          50% {
-            box-shadow: 0 25px 60px -10px rgba(139, 92, 246, 0.5);
-          }
-        }
-        .animate-float-slow {
-          animation: float-slow 6s ease-in-out infinite;
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-        .animate-bounce-slow {
-          animation: bounce-s22 3s ease-in-out infinite;
-        }
-        .animate-pulse-glow {
-          animation: pulse-glow 2s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 }

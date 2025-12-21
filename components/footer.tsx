@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Phone,
@@ -11,14 +13,17 @@ import {
   Trophy,
   Target,
   TrophyIcon,
+  ArrowUpRight,
+  ShieldCheck,
+  Globe,
 } from "lucide-react";
 
 export function Footer() {
   const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/telanganachessacademy", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
+    { icon: Facebook, href: "https://www.facebook.com/telanganachessacademy", label: "Facebook", color: "hover:bg-[#1877F2]", text: "text-[#1877F2]" },
+    { icon: Twitter, href: "#", label: "Twitter", color: "hover:bg-[#1DA1F2]", text: "text-[#1DA1F2]" },
+    { icon: Instagram, href: "#", label: "Instagram", color: "hover:bg-[#E4405F]", text: "text-[#E4405F]" },
+    { icon: Youtube, href: "#", label: "YouTube", color: "hover:bg-[#FF0000]", text: "text-[#FF0000]" },
   ];
 
   const quickLinks = [
@@ -31,184 +36,149 @@ export function Footer() {
   ];
 
   const academyLinks = [
-    { name: "Telangana Chess Academy", href: "https://telanganachessacademy.com/", domain: "telanganachessacademy.com" },
-    { name: "Telangana Chess School", href: "https://www.telanganachessschool.com", domain: "telanganachessschool.com" },
-    { name: "Bharat Chess Academy", href: "https://www.bharatchessacademy.com", domain: "bharatchessacademy.com" },
-    { name: "Bharat Chess Institute", href: "http://www.bharatchessinstitute.com", domain: "bharatchessinstitute.com" },
-    { name: "Hyderabad Chess Institute", href: "https://www.hyderabadchessinstitute.com", domain: "hyderabadchessinstitute.com" },
-  ];
-
-  const stats = [
-    { icon: Trophy, number: "500+", label: "Students Trained" },
-    { icon: Crown, number: "50+", label: "Tournaments" },
-    { icon: Target, number: "100+", label: "Success Stories" },
+    { name: "Telangana Chess Academy", href: "https://telanganachessacademy.com/", domain: "telanganachessacademy.com", color: "group-hover:text-blue-600" },
+    { name: "Telangana Chess School", href: "https://www.telanganachessschool.com", domain: "telanganachessschool.com", color: "group-hover:text-indigo-600" },
+    { name: "Bharat Chess Academy", href: "https://www.bharatchessacademy.com", domain: "bharatchessacademy.com", color: "group-hover:text-emerald-600" },
+    { name: "Bharat Chess Institute", href: "http://www.bharatchessinstitute.com", domain: "bharatchessinstitute.com", color: "group-hover:text-rose-600" },
+    { name: "Hyderabad Chess Institute", href: "https://www.hyderabadchessinstitute.com", domain: "hyderabadchessinstitute.com", color: "group-hover:text-amber-600" },
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, white 2%, transparent 0%), 
-                           radial-gradient(circle at 75px 75px, white 2%, transparent 0%)`,
-          backgroundSize: '100px 100px'
-        }}></div>
-      </div>
+    <footer className="bg-white border-t border-slate-100 pt-24 pb-12 relative overflow-hidden">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none" 
+           style={{ backgroundImage: `radial-gradient(#000 1px, transparent 1px)`, backgroundSize: '30px 30px' }} />
 
-      
-      <div className="container mx-auto px-4 py-6 relative z-10">
-
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-2">
-          {/* Academy Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center transform">
-                  <TrophyIcon className="w-7 h-7 text-white transform" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full border-2 border-gray-900"></div>
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+        
+        {/* Top Branding Section */}
+        <div className="grid lg:grid-cols-12 gap-12 mb-20">
+          <div className="lg:col-span-5 space-y-8">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-slate-900 rounded-2xl flex items-center justify-center shadow-xl shadow-slate-200">
+                <TrophyIcon className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-bold text-xl bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
-                 Telangana Chess School
+                <h3 className="text-2xl font-black tracking-tighter text-slate-900 leading-none">
+                  TELANGANA <br />
+                  <span className="text-blue-600 italic">CHESS SCHOOL</span>
                 </h3>
-                <p className="text-blue-200 text-sm font-medium">Strategic Excellence in Chess</p>
               </div>
             </div>
-            <p className="text-white/80 text-sm mb-6 leading-relaxed">
-              Dedicated to providing quality chess education and developing strong foundations for future success in chess.
+            <p className="text-slate-500 text-lg leading-relaxed max-w-sm font-medium">
+              Empowering minds through strategic excellence. Join the elite community of FIDE-certified training.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                  className={`w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center transition-all duration-300 group ${social.color}`}
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4 text-white" />
+                  <social.icon className={`w-5 h-5 text-slate-400 group-hover:text-white transition-colors`} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold text-white mb-6 text-lg relative inline-block">
-              Quick Links
-              <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    href={link.href}
-                    className="text-white/70 hover:text-white transition-all duration-300 flex items-center group text-sm"
-                  >
-                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></div>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="font-semibold text-white mb-6 text-lg relative inline-block">
-              Contact Info
-              <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-            </h4>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3 group hover:bg-white/5 p-2 rounded-lg transition-all duration-300">
-                <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/30 transition-colors">
-                  <Phone className="w-4 h-4 text-blue-300" />
-                </div>
-                <div>
-                  <p className="text-white text-sm font-medium">+91 9864646481</p>
-                  <p className="text-white/60 text-xs">Mon - Sun, 10:00 AM - 8:00 PM</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 group hover:bg-white/5 p-2 rounded-lg transition-all duration-300">
-                <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/30 transition-colors">
-                  <Mail className="w-4 h-4 text-green-300" />
-                </div>
-                <div>
-                  <p className="text-white text-sm font-medium">telanganachessschool@gmail.com</p>
-                  <p className="text-white/60 text-xs">We'll respond within 24 hours</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3 group hover:bg-white/5 p-2 rounded-lg transition-all duration-300">
-                <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/30 transition-colors">
-                  <MapPin className="w-4 h-4 text-purple-300" />
-                </div>
-                <div>
-                  <p className="text-white text-sm font-medium">Hyderabad, Telangana</p>
-                  <p className="text-white/60 text-xs">India</p>
-                </div>
-              </div>
+          <div className="lg:col-span-7 grid sm:grid-cols-3 gap-12">
+            {/* Quick Links Column */}
+            <div>
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8 flex items-center gap-2">
+                <Target className="w-3 h-3 text-blue-600" /> Platform
+              </h4>
+              <ul className="space-y-4">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className="text-sm font-bold text-slate-600 hover:text-blue-600 transition-colors flex items-center group"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
 
-          {/* Academy Links */}
-          <div>
-            <h4 className="font-semibold text-white mb-6 text-lg relative inline-block">
-              Our Network
-              <div className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
-            </h4>
-            <div className="space-y-3">
-              {academyLinks.map((academy, index) => (
-                <div
-                  key={index}
-                  className="group hover:bg-white/5 p-2 rounded-lg transition-all duration-300"
-                >
-                  <h5 className="text-white text-sm font-medium mb-1">{academy.name}</h5>
+            {/* Network Column */}
+            <div className="sm:col-span-2">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-8 flex items-center gap-2">
+                <Globe className="w-3 h-3 text-emerald-500" /> Our Network
+              </h4>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {academyLinks.map((academy, index) => (
                   <a
+                    key={index}
                     href={academy.href}
-                    className="text-white/60 hover:text-blue-300 transition-colors text-xs flex items-center"
+                    target="_blank"
+                    className="group block p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 hover:bg-white transition-all duration-300"
                   >
-                    <div className="w-1 h-1 bg-white/40 rounded-full mr-2 group-hover:bg-blue-400 transition-colors"></div>
-                    {academy.domain}
+                    <h5 className={`text-[11px] font-black uppercase tracking-tight text-slate-900 mb-1 transition-colors ${academy.color}`}>
+                      {academy.name}
+                    </h5>
+                    <p className="text-[10px] text-slate-400 font-bold tracking-wider flex items-center gap-1">
+                      {academy.domain} <ArrowUpRight className="w-2.5 h-2.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </p>
                   </a>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-white/20 pt-8 mt-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
-            <div className="text-center lg:text-left">
-              <p className="text-white/70 text-sm">
-                © 2024 Telangana Chess School. All rights reserved. |{" "}
-                <span className="text-blue-300">Master Your Strategy</span>
-              </p>
+        {/* Contact Strip */}
+        <div className="grid md:grid-cols-3 gap-4 mb-20">
+          <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-blue-200 transition-colors">
+            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+              <Phone className="w-5 h-5 text-blue-600" />
             </div>
-            <div className="flex space-x-6">
-              <Link
-                href="/terms"
-                className="text-white/60 hover:text-white text-sm transition-all duration-300 hover:underline"
-              >
-                Terms & Conditions
-              </Link>
-              <Link
-                href="/contact"
-                className="text-white/60 hover:text-white text-sm transition-all duration-300 hover:underline"
-              >
-                Privacy Policy
-              </Link>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Call Us</p>
+              <p className="text-sm font-black text-slate-900">+91 9864646481</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-emerald-200 transition-colors">
+            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+              <Mail className="w-5 h-5 text-emerald-600" />
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Email Support</p>
+              <p className="text-sm font-black text-slate-900 truncate">telanganachessschool@gmail.com</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-[2rem] border border-slate-100 group hover:border-rose-200 transition-colors">
+            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+              <MapPin className="w-5 h-5 text-rose-600" />
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Visit Us</p>
+              <p className="text-sm font-black text-slate-900">Hyderabad, Telangana</p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Floating Chess Pieces */}
-      <div className="absolute bottom-10 left-10 opacity-10">
-        <TrophyIcon className="w-16 h-16" />
-      </div>
-      <div className="absolute top-20 right-20 opacity-10">
-        <Crown className="w-12 h-12" />
+        {/* Legal Bottom Bar */}
+        <div className="pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-slate-400" />
+            <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">
+              © 2024 Telangana Chess School. <span className="hidden sm:inline">Certified Strategy Training.</span>
+            </p>
+          </div>
+          <div className="flex gap-8">
+            <Link href="/terms" className="text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors">
+              Terms
+            </Link>
+            <Link href="/contact" className="text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors">
+              Privacy
+            </Link>
+            <Link href="/contact" className="text-[11px] font-black uppercase tracking-widest text-slate-400 hover:text-slate-900 transition-colors">
+              Cookies
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   );
