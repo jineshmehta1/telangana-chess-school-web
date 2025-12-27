@@ -81,7 +81,7 @@ export default function GalleryPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <Sparkles className="w-3 h-3 text-blue-600" /> Visual Legacy
             </div>
-            <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none mb-6">
+            <h1 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none mb-6">
               THE <span className="text-blue-600 italic">GALLERY.</span>
             </h1>
             <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl border-l-2 border-slate-200 pl-6">

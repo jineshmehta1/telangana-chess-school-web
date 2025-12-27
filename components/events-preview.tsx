@@ -75,7 +75,7 @@ export function EventsPreview() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <Calendar className="w-3 h-3" /> Event Calendar
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none uppercase">
+            <h2 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none uppercase">
               STRATEGIC <span className="text-blue-600 italic font-black">EVENTS</span>
             </h2>
           </div>

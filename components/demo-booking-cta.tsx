@@ -57,7 +57,7 @@ export function DemoBookingCTA() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">
             <CheckCircle2 className="w-3 h-3 text-emerald-400" /> Start Your Move
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8 uppercase">
+          <h2 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8 uppercase">
             BEGIN YOUR <br />
             <span className="text-blue-600 italic">CHESS JOURNEY</span>
           </h2>

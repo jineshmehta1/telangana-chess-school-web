@@ -95,7 +95,7 @@ export default function CoachesPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <ShieldCheck className="w-3 h-3 text-blue-600" /> Elite Mentorship
             </div>
-            <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none mb-6">
+            <h1 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none mb-6">
               THE <span className="text-blue-600 italic font-black">MASTERS.</span>
             </h1>
             <p className="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl border-l-2 border-slate-200 pl-6">
@@ -202,7 +202,7 @@ export default function CoachesPage() {
 
           <div className="relative z-10">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter uppercase">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase">
                 WHY TRAIN <span className="text-blue-600 italic">WITH US.</span>
               </h2>
             </div>
@@ -230,7 +230,7 @@ export default function CoachesPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
                Start Your Move
             </div>
-            <h2 className="text-4xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase mb-12 leading-none">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-12 leading-none">
               READY TO <span className="text-blue-600 italic">DOMINATE?</span>
             </h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

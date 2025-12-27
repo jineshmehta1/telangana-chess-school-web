@@ -165,7 +165,7 @@ export default function CoursesPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <ShieldCheck className="w-3 h-3 text-blue-600" /> Syllabus 2024-25
             </div>
-            <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none mb-6 uppercase">
+            <h1 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none mb-6 uppercase">
               STRATEGIC <br />
               <span className="text-blue-600 italic">CURRICULUM.</span>
             </h1>

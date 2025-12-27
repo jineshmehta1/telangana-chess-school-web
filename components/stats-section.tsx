@@ -77,7 +77,7 @@ export function StatsSection() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-widest mb-4">
               <Plus className="w-3 h-3" /> Growth Metrics
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-none">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none">
               OUR <span className="text-blue-600 italic">ACHIEVEMENTS</span>
             </h2>
           </div>

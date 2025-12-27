@@ -29,6 +29,7 @@ import {
   Globe,
   ArrowRight,
   ShieldCheck,
+  Crown
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -96,7 +97,7 @@ export default function ContactPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <ShieldCheck className="w-3 h-3 text-blue-600" /> Support HQ
             </div>
-            <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter leading-none mb-6 uppercase">
+            <h1 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none mb-6 uppercase">
               CONNECT WITH <br />
               <span className="text-blue-600 italic">THE MASTERS.</span>
             </h1>
@@ -263,7 +264,7 @@ export default function ContactPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
                  Tactical Intelligence
               </div>
-              <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none">
+              <h2 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none">
                 FREQUENT <span className="text-blue-600 italic">INTEL.</span>
               </h2>
             </div>
@@ -290,7 +291,7 @@ export default function ContactPage() {
         <div className="mt-32 relative bg-blue-600 rounded-[3rem] p-12 md:p-20 text-white text-center overflow-hidden shadow-2xl shadow-blue-200">
           <Crown className="absolute top-0 left-0 w-64 h-64 text-white/10 -translate-x-20 -translate-y-20 rotate-12" />
           <div className="relative z-10">
-            <h3 className="text-4xl md:text-6xl font-black tracking-tighter leading-none mb-6">STILL HAVE QUESTIONS?</h3>
+            <h3 className="text-4xl md:text-5xl font-black tracking-tighter leading-none mb-6">STILL HAVE QUESTIONS?</h3>
             <p className="text-blue-100 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto italic">
               Our experts are standing by to help with any academy related queries.
             </p>

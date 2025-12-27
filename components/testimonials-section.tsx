@@ -86,7 +86,7 @@ export function TestimonialsSection() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
               <MessageSquare className="w-3 h-3" /> Student Voices
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter leading-none">
+            <h2 className="text-5xl md:text-5xl font-black text-slate-900 tracking-tighter leading-none">
               VOICES OF <span className="text-blue-600 italic">SUCCESS</span>
             </h2>
           </div>
@@ -155,7 +155,7 @@ export function TestimonialsSection() {
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/2" />
           
           <div className="relative z-10 flex flex-col items-center text-center">
-            <h3 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 leading-none">
+            <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 leading-none">
               READY TO BE OUR NEXT <br />
               <span className="text-blue-400 italic">GRANDMASTER?</span>
             </h3>
